@@ -1,7 +1,6 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/AsyaKnyazeva/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/AsyaKnyazeva/frontend-project-lvl2/actions)",
   "main": "index.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -10,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
+  "description": "[![Actions Status](https://github.com/AsyaKnyazeva/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/AsyaKnyazeva/frontend-project-lvl2/actions)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AsyaKnyazeva/frontend-project-lvl2.git"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/AsyaKnyazeva/frontend-project-lvl2#readme",
   "dependencies": {
-    "commander": "^9.2.0",
+    "commander": "^9.4.0",
     "jest": "^28.1.1",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"

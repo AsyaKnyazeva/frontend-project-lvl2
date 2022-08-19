@@ -10,3 +10,5 @@
  https://asciinema.org/a/EC3nf6DW9QXlvUXuUhBevgIKc
 
 #### Сравнение плоского YAML
+
+https://asciinema.org/a/CeHYUbYXDbqFjDBXadg1TnEK8

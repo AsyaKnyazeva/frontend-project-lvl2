@@ -9,7 +9,7 @@ const parse = (filePath) => {
   if (path.extname(filePath) === '.yml' || path.extname(filePath) === '.yaml') {
     return yaml.load(fs.readFileSync(filePath, 'utf-8'));
   }
-  // throw new Error('Unknown data type');
+  throw new Error('Unknown data type');
 };
 
-export { parse };
+export default parse;

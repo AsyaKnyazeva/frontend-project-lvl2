@@ -24,3 +24,10 @@
 
 ### Сравнение JSON и YAML в форматах plain и stylish
 https://asciinema.org/a/d7ZFTq8Ho98y5GcJuxE3B9myw
+
+```
+Добавлен функционал по выводу сравнения в JSON
+```
+
+### Сравнение JSON и YAML в форматe JSON
+https://asciinema.org/a/yMapirNQy2Db1aItU0q3J6C6l

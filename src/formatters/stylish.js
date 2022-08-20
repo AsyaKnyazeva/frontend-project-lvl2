@@ -46,4 +46,8 @@ const render = (tree) => {
 
   return `{${iter(tree).join('')}\n}`;
 };
-export default render;
+const stylish = (data) => {
+  const result = render(data);
+  return result;
+};
+export default stylish;

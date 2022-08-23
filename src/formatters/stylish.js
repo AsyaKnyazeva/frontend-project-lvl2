@@ -1,8 +1,10 @@
 import _ from 'lodash';
 
+const spaceForBigIndent = 6;
+const spaceForSmallIndent = 4;
 const stringify = (value, spaces) => {
-  const indent = ' '.repeat(spaces + 6);
-  const indentClose = ' '.repeat(spaces + 2);
+  const indent = ' '.repeat(spaces + spaceForBigIndent);
+  const indentClose = ' '.repeat(spaces + spaceForSmallIndent);
 
   if (!_.isObject(value)) {
     return value;
@@ -40,6 +42,9 @@ const render = (tree) => {
       }
       case 'unchanged': {
         return `\n${indent}  ${name}: ${stringify(value, spaces)}`;
+      }
+      default: {
+        throw new Error('Invalid style indentation');
       }
     }
   });

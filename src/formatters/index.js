@@ -3,15 +3,15 @@ import plain from './plain.js';
 import json from './json.js';
 
 const formatFile = (tree, format) => {
-  switch (format){
+  switch (format) {
     case 'plain':
       return plain(tree);
-      case 'json':
+    case 'json':
       return json(tree);
-      case 'stylish':
+    case 'stylish':
       return stylish(tree);
-      default:
-        throw new Error(`There is no type called: '.${format}'! Try plain, json or stylish`);
-    }
-  };
-  export default formatFile;
+    default:
+      throw new Error(`There is no type called: '.${format}'! Try plain, json or stylish`);
+  }
+};
+export default formatFile;

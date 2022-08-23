@@ -1,8 +1,6 @@
 import yaml from 'js-yaml';
 
-
-
- const parse = (fileContent, extension) => {
+const parse = (fileContent, extension) => {
   switch (extension) {
     case 'json':
       return JSON.parse(fileContent);
@@ -14,5 +12,3 @@ import yaml from 'js-yaml';
   }
 };
 export default parse;
-
-

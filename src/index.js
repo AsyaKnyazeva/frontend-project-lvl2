@@ -1,9 +1,10 @@
-import parse from './parsers.js';
-import makeTree from './treeBuilder.js';
-import formatFile from './formatters/index.js';
 import fs from 'fs';
 import path from 'path';
 import process from 'node:process';
+import parse from './parsers.js';
+import makeTree from './treeBuilder.js';
+import formatFile from './formatters/index.js';
+
 const getAbsolutePath = (file) => path.resolve(process.cwd(), file);
 
 const getExtensions = (file) => path.extname(file).slice(1);

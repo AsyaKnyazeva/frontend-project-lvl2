@@ -2,13 +2,16 @@ import stylish from './stylish.js';
 import plain from './plain.js';
 import json from './json.js';
 
-const getFormater = (tree, format) => {
-  if (format === 'plain') {
-    return plain(tree);
-  }
-  if (format === 'json') {
-    return json(tree);
-  }
-  return stylish(tree);
-};
-export default getFormater;
+const formatFile = (tree, format) => {
+  switch (format){
+    case 'plain':
+      return plain(tree);
+      case 'json':
+      return json(tree);
+      case 'stylish':
+      return stylish(tree);
+      default:
+        throw new Error(`There is no type called: '.${format}'! Try plain, json or stylish`);
+    }
+  };
+  export default formatFile;

@@ -2,7 +2,7 @@ install:
 	npm ci
 
 test:
-	NODE_OPTIONS=--experimental-vm-modules npx test
+	npm test
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8

@@ -1,13 +1,13 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
-import json from './json.js';
+import makeJson from './json.js';
 
 const formatFile = (tree, format) => {
   switch (format) {
     case 'plain':
       return plain(tree);
     case 'json':
-      return json(tree);
+      return makeJson(tree);
     case 'stylish':
       return stylish(tree);
     default:

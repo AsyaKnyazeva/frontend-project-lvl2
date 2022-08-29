@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'node:process';
-import parse from './parsers.js';
+import parseFile from './parsers.js';
 import makeTree from './treeBuilder.js';
 import formatFile from './formatters/index.js';
 
@@ -11,15 +11,16 @@ const getExtensions = (file) => path.extname(file).slice(1);
 
 const getContentFromFile = (file) => {
   const absolutePath = getAbsolutePath(file);
-  const fileContent = fs.readFileSync(absolutePath, 'utf8');
+  const fileContent = fs.readFileSync(absolutePath, 'utf-8');
   const extension = getExtensions(file);
-  return parse(fileContent, extension);
+  return parseFile(fileContent, extension);
 };
 
 const gendiff = (path1, path2, format = 'stylish') => {
-  const parsedFile1 = getContentFromFile(path1);
-  const parsedFile2 = getContentFromFile(path2);
-  const tree = makeTree(parsedFile1, parsedFile2);
+  const parsedFileData1 = getContentFromFile(path1);
+  const parsedFileData2 = getContentFromFile(path2);
+  const tree = makeTree(parsedFileData1, parsedFileData2);
   return formatFile(tree, format);
 };
+
 export default gendiff;

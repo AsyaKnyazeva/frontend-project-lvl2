@@ -5,8 +5,8 @@ const spaceForSmallIndent = 4;
 const spaceForVerySmallIndent = 2;
 const stringify = (value, spaces) => {
   const indent = ' '.repeat(spaces + spaceForBigIndent);
-  const indentClose = ' '.repeat(spaces + spaceForSmallIndent);
 
+  const indentClose = ' '.repeat(spaces + spaceForVerySmallIndent);
   if (!_.isObject(value)) {
     return value;
   }

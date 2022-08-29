@@ -2,6 +2,7 @@ import _ from 'lodash';
 
 const spaceForBigIndent = 6;
 const spaceForSmallIndent = 4;
+const spaceForVerySmallIndent = 2;
 const stringify = (value, spaces) => {
   const indent = ' '.repeat(spaces + spaceForBigIndent);
   const indentClose = ' '.repeat(spaces + spaceForSmallIndent);
@@ -12,7 +13,7 @@ const stringify = (value, spaces) => {
   const entries = _.keys(value);
   const nestedValue = entries.map((key) => {
     if (_.isObject(value[key])) {
-      return `${indent}${key}: ${stringify(value[key], spaces + 4)}\n`;
+      return `${indent}${key}: ${stringify(value[key], spaces + spaceForSmallIndent)}\n`;
     }
     return `${indent}${key}: ${value[key]}\n`;
   });
@@ -20,12 +21,12 @@ const stringify = (value, spaces) => {
 };
 
 const render = (tree) => {
-  const iter = (data, spaces = 2) => data.map((key) => {
+  const iter = (data, spaces = spaceForVerySmallIndent) => data.map((key) => {
     const {
       name, type, children, value, beforeValue, afterValue,
     } = key;
     const indent = ' '.repeat(spaces);
-    const indentClose = ' '.repeat(spaces + 2);
+    const indentClose = ' '.repeat(spaces + spaceForVerySmallIndent);
 
     switch (type) {
       case 'added': {
@@ -35,7 +36,7 @@ const render = (tree) => {
         return `\n${indent}- ${name}: ${stringify(value, spaces)}`;
       }
       case 'nested': {
-        return `\n${indent}  ${name}: {${iter(children, spaces + 4).join('')}\n${indentClose}}`;
+        return `\n${indent}  ${name}: {${iter(children, spaces + spaceForSmallIndent).join('')}\n${indentClose}}`;
       }
       case 'changed': {
         return `\n${indent}- ${name}: ${stringify(beforeValue, spaces)}\n${indent}+ ${name}: ${stringify(afterValue, spaces)}`;

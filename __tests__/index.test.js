@@ -18,7 +18,7 @@ const jsonFile2 = getPath('file2.json');
 const yamlFile1 = getPath('file1.yaml');
 const yamlFile2 = getPath('file2.yaml');
 
-test.each([
+const testCases = [
   { file1: jsonFile1, file2: jsonFile2, expected: expectedStylish },
   { file1: yamlFile1, file2: yamlFile2, expected: expectedStylish },
   {
@@ -39,7 +39,9 @@ test.each([
   {
     file1: yamlFile1, file2: yamlFile2, format: 'json', expected: expectedJson,
   },
-])('.add($file1, $file2, $style)', ({
+];
+
+test.each(testCases)('.add($file1, $file2, $style)', ({
   file1, file2, format, expected,
 }) => {
   expect(gendiff(file1, file2, format)).toEqual(expected);
